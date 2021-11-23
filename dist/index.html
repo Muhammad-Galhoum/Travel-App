@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://bootswatch.com/5/yeti/bootstrap.min.css">
+
+        <title>travel-app</title>
+    <link href="main.css" rel="stylesheet"></head>
+
+<body>
+   <section class="main-section">
+            <header>
+                    <div>
+                        <a  class="title" href="/">travel-To <span> <i class="far fa-suitcase-rolling"></i></span></a></div>         
+                  
+              <nav class="nav">
+                    <ul class="nav-items">
+                        <li class="nav-item"><a href="/">My Trip</a></li>
+                        <li class="nav-item"><a href="#book-list">Book List</a></li>
+                    </ul>
+               </nav>
+            </header>
+
+            <!-- //form section start -->
+            <section class="sub-section">
+                <div class="form">
+                    <div class="inputs">
+                        <div class="input-1">
+                               <input id="city" type="text"  placeholder="enter the city" required>
+                        </div>
+                        <div>
+                               <input id="leaving-date" type="text"  placeholder=" leaving-date YYYY-MM-DD" required>
+                        </div>
+                        <div>
+                               <input id="return-date" type="text"  placeholder=" return-date YYYY-MM-DD" required>
+                        </div>
+                        </div>
+                      <div class="btns-header">
+                           <button id="btn" class="submit-btn ">GO</button> 
+                           <button id="clear-btn" class="clear-btn">New Trip</button> 
+                     </div>
+                 </div>     
+              </div>                    
+            </section>
+            <!-- //form section end -->
+    </section> 
+            <!-- //countdown section start -->
+            <section id="countdown-section" class="countdown-section hidden">
+                <div>
+                    <h1 id="caption"></h1>
+                    <div class="countdown">
+                        <div class="container-day">
+                            <h2 id="days" class="day"></h2>
+                            <h2 class="text">Day</h2>
+                        </div>
+                        <div class="container-hour">
+                            <h2 id="hours" class="hour"></h2>
+                            <h2 class="text">Hour</h2>
+                        </div>
+                        <div class="container-minute">
+                            <h2 id="minutes" class="minute"></h2>
+                            <h2 class="text">Minute</h2>
+                        </div>
+                        <div class="container-second">
+                            <h2 id="seconds" class="second"></h2>
+                            <h2 class="text">Second</h2>
+                        </div>
+                    </div>
+                
+                </div>
+            </section>
+            <!-- //countdown section end -->
+    
+            <!-- //card weather section start -->
+            <section id="card-section" class="weather-card hidden print-container ">
+                <div id="card" class="card" >
+                    <img id='city-image' src="" class="city-image" alt="city-image" >
+                    <div class="card-body-weather">
+                      <h3 class="city-name" id="city-name">city name<span id="country-code"></span></h3>
+                      <div class="card-info" id='card-info'>
+                        <!-- //card info will be added dynamically -->
+                     </div>
+                     <div class="btn">
+                        <button class="book-btn" id="add-book-btn" >Add To Book List</button>
+                        <button class="print-btn" id="print-btn" >Print Your Trip</button>
+    
+                      </div>
+                    </div>
+             </div>
+            </section>
+            <!-- //card weather section end -->
+
+            <!-- //book list table start -->
+            <section id="book-list">
+                <div class="container mt-4">
+                    <h1 class="display-4 text-center" >
+                        <i class="fas fa-book-open text-info"></i>
+                        My<span class="text-info">Book</span>List</h1>
+                            <table class="table table-striped mt-5">
+                                <thead>
+                                    <tr>
+                                        <th>Destination</th>
+                                        <th>Leaving</th>
+                                        <th>Returing</th>
+                                        <th></th>
+                                </tr>
+                                </thead>  
+                                <tbody id="book-list-body">
+                                    <!-- //card body will be added dynamically
+     -->
+                                </tbody>
+                            </table>
+                    </div>
+            
+            </section> 
+            <!-- //book list table end -->
+             
+            <!-- //footer start -->
+            <footer class="footer">
+                <div  class="copy">
+                    <p>&copy Muhammad</p></div>       
+              
+                <div class="icons">
+                    <ul class="icon-items">
+                    <li class="icon-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li class="icon-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li class="icon-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li class="icon-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        </ul>
+            
+                </div>
+            </footer>
+            <!-- //footer start -->
+
+          
+ 
+
+
+            <!-- //add service workers -->
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+
+<script  src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="main.js"></script></body>
+</html>

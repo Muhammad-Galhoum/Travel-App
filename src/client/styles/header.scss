@@ -1,0 +1,47 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: lighter;
+  padding: 15px;
+
+  a.title {
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+    text-transform: capitalize;
+  }
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  li {
+    list-style: none;
+    margin-right: 10px;
+
+    a {
+      text-decoration: none;
+      color: white;
+      margin-right: 10px;
+      font-size: 24px;
+      padding: 8px;
+
+      &:hover {
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+}
+
+//add media
+@media (max-width: 850px) {
+  header {
+    flex-direction: column;
+  }
+  .title {
+    text-align: center;
+  }
+}

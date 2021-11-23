@@ -1,0 +1,159 @@
+.weather-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.card {
+  margin: 20px;
+  width: 70%;
+
+  .city-name {
+    font-size: 50px;
+    padding: 10px;
+  }
+
+  .card-info {
+    position: relative;
+    padding: 18px;
+  }
+}
+
+.more-info-title {
+  margin: 12px;
+  cursor: pointer;
+}
+
+.more-info-container {
+  display: none;
+
+  &.show {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin: 20px;
+    padding: 10px;
+  }
+}
+
+.more-info {
+  padding: 8px;
+  &.first {
+    border-right: 1px solid black;
+  }
+}
+
+.card-body-weather p {
+  font-size: 25px;
+  padding: 5px;
+}
+hr {
+  margin: 50px;
+}
+
+.desc {
+  text-transform: capitalize;
+  padding: 10px;
+  margin: 10px;
+  line-height: 1.5;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .book-btn,
+  .print-btn {
+    font-size: 20px;
+    margin: 5px;
+    padding: 5px;
+    outline: none;
+    border-radius: 5px;
+    background-color: #0194d2;
+    border: 1px solid rgb(224, 224, 255);
+    color: white;
+    cursor: pointer;
+    width: 100%;
+
+    &:hover {
+      background-color: #084cc2;
+    }
+  }
+}
+
+//add media
+
+@media (max-width: 1600px) {
+  .card {
+    margin: 10px;
+    width: 40%;
+    height: 50%;
+    text-align: center;
+  }
+
+  .city-name {
+    font-size: 40px;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .card-info {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .card-body-weather p {
+    font-size: 30px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 30px;
+    margin: 10px;
+    padding: 10px;
+  }
+  h3 {
+    font-size: 27px;
+    padding: 10px;
+  }
+  h4 {
+    font-size: 25px;
+  }
+  .card-info p {
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+
+/* print media */
+@media print {
+  /* hide  content body except the print section */
+  body {
+    visibility: hidden;
+  }
+
+  /* display print section */
+  .print-container {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .card {
+    width: 70%;
+    height: fit-content;
+  }
+
+  .btn {
+    display: none;
+  }
+}
